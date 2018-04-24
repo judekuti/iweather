@@ -21,6 +21,10 @@ ionViewWillEnter(){
     city: 'Miami',
     state: 'FL'
   }
+
+  this.weatherProvider.getWeather(this.location.city, this.location.state).subscribe(weather => {
+    this.weather = weather.current_observation;
+  });
 }
 
 }
